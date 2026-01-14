@@ -14,17 +14,20 @@ function Login() {
     }
 
     console.log({ email, password, role });
+    setEmail("");
+    setPassword("");
+    setRole("");
   }
 
   return (
-    <>
+    <div className="login-container" >
       <h1>Login Page</h1>
 
       <form onSubmit={handleLogin} className="form">
         <input
           type="email"
           value={email}
-          className="usermail"
+          className="inputField"
           placeholder="Enter email"
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -34,14 +37,14 @@ function Login() {
         <input
           type="password"
           value={password}
-          className="password"
+          className="inputField"
           placeholder="Enter password"
           onChange={(e) => setPassword(e.target.value)}
         />
 
         <br />
 
-        <select value={role} className="userRole" onChange={(e) => setRole(e.target.value)}>
+        <select value={role} className="inputField" onChange={(e) => setRole(e.target.value)}>
           <option value="">Select Role</option>
           <option value="student">Student</option>
           <option value="faculty">Faculty</option>
@@ -51,7 +54,8 @@ function Login() {
 
         <button type="submit" className="submitBtn">Login</button>
       </form>
-    </>
+      
+    </div>
   );
 }
 
