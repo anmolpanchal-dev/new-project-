@@ -1,0 +1,24 @@
+Faculty Dashboard
+ ├── Add New Book
+ │     ↓
+ │   Book Details Form
+ │     - Book Name
+ │     - Author
+ │     - Quantity
+ │     - Category
+ │
+ ├── View All Books
+ │
+ ├── Issue Book to Student
+ │     ↓
+ │   Select Student
+ │   Select Book
+ │   Set Issue Date
+ │
+ └── Track Issued Books
+       ↓
+     Shows:
+     - Student Name
+     - Book Name
+     - Issue Date
+     - Status (Returned / Pending)

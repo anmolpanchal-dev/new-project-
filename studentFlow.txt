@@ -1,0 +1,16 @@
+Student Dashboard
+ ├── View Available Books
+ │     ↓
+ │   List of books
+ │   Quantity available
+ │
+ ├── My Issued Books
+ │     ↓
+ │   Shows:
+ │   - Book Name
+ │   - Issue Date
+ │   - Status
+ │
+ └── Profile Section
+       ↓
+     Student details
