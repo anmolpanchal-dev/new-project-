@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
+  const navigate = useNavigate();
 
   function handleLogin(e) {
     e.preventDefault();
@@ -12,7 +14,13 @@ function Login() {
       alert("All fields are compulsory");
       return;
     }
+    if (role === "student") {
+    navigate("/student");
+  }
 
+  if (role === "faculty") {
+    navigate("/faculty");
+  }
     console.log({ email, password, role });
     setEmail("");
     setPassword("");

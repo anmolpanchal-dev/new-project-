@@ -1,0 +1,29 @@
+.student-dashboard {
+  padding: 40px;
+  min-height: 100vh;
+  background: #f5f7fb;
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.book-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.book-card {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  width: 250px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+}
