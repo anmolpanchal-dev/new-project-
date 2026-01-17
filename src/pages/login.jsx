@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "../styles/login.css";  // separate CSS
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -7,62 +8,52 @@ function Login() {
   const [role, setRole] = useState("");
   const navigate = useNavigate();
 
-  function handleLogin(e) {
+  const handleLogin = (e) => {
     e.preventDefault();
-
     if (!email || !password || !role) {
-      alert("All fields are compulsory");
+      alert("All fields are required!");
       return;
     }
-    if (role === "student") {
-    navigate("/student");
-  }
+    if (role === "student") navigate("/student");
+    else if (role === "faculty") navigate("/faculty");
 
-  if (role === "faculty") {
-    navigate("/faculty");
-  }
-    console.log({ email, password, role });
     setEmail("");
     setPassword("");
     setRole("");
-  }
+  };
 
   return (
-    <div className="login-container" >
-      <h1>Login Page</h1>
-
-      <form onSubmit={handleLogin} className="form">
+    <div className="login-container">
+      <h1>Library Login</h1>
+      <form onSubmit={handleLogin}>
         <input
           type="email"
           value={email}
-          className="inputField"
           placeholder="Enter email"
+          className="inputField"
           onChange={(e) => setEmail(e.target.value)}
         />
-
         <br />
-
         <input
           type="password"
           value={password}
-          className="inputField"
           placeholder="Enter password"
+          className="inputField"
           onChange={(e) => setPassword(e.target.value)}
         />
-
         <br />
-
-        <select value={role} className="inputField" onChange={(e) => setRole(e.target.value)}>
+        <select
+          value={role}
+          className="inputField"
+          onChange={(e) => setRole(e.target.value)}
+        >
           <option value="">Select Role</option>
           <option value="student">Student</option>
           <option value="faculty">Faculty</option>
         </select>
-
         <br />
-
         <button type="submit" className="submitBtn">Login</button>
       </form>
-      
     </div>
   );
 }
